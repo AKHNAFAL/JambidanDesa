@@ -1,0 +1,118 @@
+sim-desa: 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
+sim-desa2: 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
+sim-desa3: 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
+
+Komentar Factory:
+Saya mempunyai tabel post_komentar sebagai berikut:
+
+INSERT INTO post_komentar (id, user_id, komentar, tanggal_post, created_at, updated_at) VALUES ()
+
+Tolong generate data untuk tabel tersebut,
+buatlah 40 data komentar dengan tanggal_post rentang tanggal 2024-06-05 sampai 2024-06-09.
+buatlah value id mulai dari 1-40
+kosongkan atribut user_id, beri jarak pada atribut created_at 0.5 jam pada tiap komentar baru muncul.
+Data komentar tersebut harus membahas tentang {{ jalan rusak atau terdapat bolongan dalam di jalan panglima yang dapat mengakibatkan kecelakaan }}.
+konteksnya, yang memberi komentar tersebut adalah warga desa di suatu desa di Indonesia.
+Komentar harus menggunakan bahasa non-formal,
+Pola komentar harus beragam namun tetap membahas topik yang sama
+
+prompt komentar dahulu:
+
+        // $promptContent = "Dari komentar-komentar berikut ini, buatlah ringkasan pembahasan utama warga desa dari tanggal yang paling awal hingga tanggal terakhir. 
+        //     Ringkasan pembahasan harus mencakup poin-poin utama yang dibahas dalam komentar:\n\n$formattedKomentar\n\n
+        //     Berdasarkan komentar-komentar tersebut, buatlah ringkasan dengan poin-poin utama dalam format JSON. Format JSON harus hanya berisi 'topic' yang mencakup serangkaian topik utama yang dibahas pada tanggal tertentu, 'nama' yang berisi nama dari topik tersebut, 'date' yang berisi string tanggal dalam format yy-mm-dd yang diambil dari akhir komentar, dan 'breakdown' yang berisi rangkaian string, masing-masing mewakili poin utama yang dibahas, seperti poin utama pertama, poin utama kedua, dan seterusnya.
+
+        //     Contoh format JSON:
+        //     [
+        //         {
+        //             \"topic\": \"Topik utama yang sering dibahas pada tanggal tertentu\",
+        //             \"nama\": \"Nama topik tertentu\",
+        //             \"date\": \"2024-06-21\",
+        //             \"breakdown\": [
+        //                 \"Poin utama pertama yang dibahas\",
+        //                 \"Poin utama kedua yang dibahas\",
+        //                 \"Poin utama ketiga yang dibahas\",
+        //                 \"Poin utama keempat yang dibahas\",
+        //                 \"Dll. yang paling banyak sesuai kapasitas topik\"
+        //             ]
+        //         },
+        //         {
+        //             \"topic\": \"Topik utama lainnya yang sering dibahas pada tanggal tertentu\",
+        //             \"nama\": \"Nama topik tertentu lainnya\",
+        //             \"date\": \"2024-06-22\",
+        //             \"breakdown\": [
+        //                 \"Poin utama pertama yang dibahas\",
+        //                 \"Poin utama kedua yang dibahas\",
+        //                 \"Poin utama ketiga yang dibahas\",
+        //                 \"Poin utama keempat yang dibahas\",
+        //                 \"Dll. yang paling banyak sesuai kapasitas topik\"
+        //             ]
+        //         }
+        //     ]";
+
+
+        //     $promptContent = "Dari komentar-komentar berikut ini, buatlah ringkasan pembahasan utama warga desa dari tanggal yang paling awal hingga tanggal terakhir.
+        // Ringkasan pembahasan harus mencakup poin-poin utama yang dibahas dalam komentar:\n\n$formattedKomentar\n\n
+        // Berdasarkan komentar-komentar tersebut, buatlah ringkasan dengan poin-poin utama dalam format JSON. Format JSON harus hanya berisi 'topic' yang mencakup serangkaian topik utama yang dibahas pada tanggal tertentu, 'nama' yang berisi nama dari topik tersebut, 'date' yang berisi string tanggal dalam format yy-mm-dd yang diambil dari akhir komentar, dan 'breakdown' yang berisi rangkaian string, masing-masing mewakili poin utama yang dibahas, seperti poin utama pertama, poin utama kedua, dan seterusnya. Contoh format JSON:
+
+        // [
+        //     {
+        //         \"topic\": \"Topik komentar yang paling sering dibahas\",
+        //         \"date\": \"Tanggal topik dibahas (yy-mm-dd)\",
+        //         \"breakdown\": [\"Poin pertama\", \"Poin kedua\", \"Poin ketiga\", \"Poin keempat\", \"Dll\"]
+        //     },
+        //     {
+        //         \"topic\": \"Topik komentar lainnya\",
+        //         \"date\": \"Tanggal topik dibahas lainnya (yy-mm-dd)\",
+        //         \"breakdown\": [\"Poin pertama\", \"Poin kedua\", \"Poin ketiga\", \"Poin keempat\", \"Dll\"]
+        //     }
+        // ]";
+
+
+        // $promptContent = "Dari komentar-komentar berikut ini, buatlah ringkasan pembahasan utama warga desa dari tanggal yang paling awal sampai tanggal terakhir.
+        // Ringkasan pembahasan harus mencakup poin-poin utama yang dibahas dalam komentar:\n\n$formattedKomentar\n\n
+        // Berdasarkan komentar-komentar tersebut, buatlah ringkasan dengan poin-poin utama dalam format JSON. Format JSON harus hanya berisi 'topic' yang berisi 
+        // nama topik utama yang dibahas pada tanggal tertentu, 'date' yang berisi string tanggal dalam format yy-mm-dd,
+        // dan 'breakdown' yang berisi rangkaian string, masing-masing mewakili poin utama yang dibahas, misalnya poin utama pertama, poin utama kedua, dan seterusnya.";
+
+        //     $promptContent = "Dari komentar-komentar berikut ini, buatlah ringkasan pembahasan utama warga desa dari tanggal yang paling awal sampai tanggal terakhir.
+        // Ringkasan pembahasan harus mencakup poin-poin utama yang dibahas dalam komentar:\n\n$formattedKomentar\n\n
+        // Berdasarkan komentar-komentar tersebut, buatlah ringkasan dengan poin-poin utama dalam format JSON. Format JSON harus hanya berisi 'topic' yang berisi 
+        // nama topik, 'date' yang berisi string tanggal dalam format yy-mm-dd,
+        // dan 'breakdown' yang berisi rangkaian string, masing-masing mewakili poin utama yang dibahas, misalnya poin utama pertama, poin utama kedua, dan seterusnya.";
+
+
+        // $promptContent = "Dari komentar-komentar berikut ini, buatlah ringkasan pembahasan utama warga desa dari tanggal yang paling awal sampai tanggal terakhir.
+        // Ringkasan pembahasan harus mencakup poin-poin utama yang dibahas dalam komentar:\n\n$formattedKomentar\n\n
+        // Berdasarkan komentar-komentar tersebut, buatlah ringkasan dengan poin-poin utama dalam format JSON. Format JSON harus hanya berisi nama objek luarannya 'topics' dan isi objek tersebut adalah atribut 'topic' yang berisi 
+        // nama topik, 'date' yang berisi string tanggal format yy-mm-dd - yy-mm-dd atau hanya yy-mm-dd untuk topik yang hanya dibahas di tanggal itu saja,
+        // dan 'breakdown' yang berisi rangkaian string, masing-masing mewakili poin utama yang dibahas. Semua unsur output wajib menggunakan bahasa Indonesia";
+
+        $promptContent = "Dari komentar-komentar berikut ini, buatlah ringkasan pembahasan utama warga desa dari tanggal yang paling awal sampai tanggal terakhir.
+                        Ringkasan pembahasan harus mencakup poin-poin utama yang dibahas dalam komentar:\n\n$formattedKomentar\n\n
+                        Berdasarkan komentar-komentar tersebut, buatlah ringkasan dengan poin-poin utama dalam format JSON. Format JSON harus hanya berisi nama objek luarannya 'topics' dan isi objek tersebut adalah atribut 'topic' yang berisi 
+                        nama topik, 'date' yang berisi string tanggal format yy-mm-dd - yy-mm-dd atau hanya yy-mm-dd untuk topik yang hanya dibahas di tanggal itu saja,
+                        dan 'breakdown' yang berisi rangkaian string, masing-masing mewakili poin utama yang dibahas. Semua unsur output wajib menggunakan bahasa Indonesia dan anda wajib memastikan semua topik yang ada dikumpulan
+                        komentar tersebut telah diringkas tanpa menyisakannya";
+
+        // $promptContent = "Buat ringkasan utama dari komentar-komentar berikut menggunakan format JSON: \n\n$formattedKomentar\n\n
+        // - JSON array of objects
+        // - Each object contains:
+        //     - \"topic\": string, the main topic discussed on a specific date
+        //     - \"date\": string, the date in format yy-mm-dd, take the date from the end of the comments
+        //     - \"breakdown\": array of strings, each representing the main points discussed, e.g., first main point, second main point, etc.
+
+        // Contoh output JSON:
+        // [
+        //     {
+        //         \"topic\": \"Topik komentar yang paling sering dibahas\",
+        //         \"date\": \"Tanggal topik dibahas\",
+        //         \"breakdown\": [\"Poin pertama\", \"Poin kedua\", \"Poin ketiga\", \"Poin keempat\", \"Dll\"]
+        //     },
+        //     {
+        //         \"topic\": \"Topik komentar lainnya\",
+        //         \"date\": \"Tanggal topik dibahas lainnya\",
+        //         \"breakdown\": [\"Poin pertama\", \"Poin kedua\", \"Poin ketiga\", \"Poin keempat\", \"Dll\"]
+        //     }
+        // ]";
+        // 

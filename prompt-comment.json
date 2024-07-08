@@ -1,0 +1,28 @@
+[
+    {
+        "topic": "// Topik komentar yang paling sering dibahas pada tanggal tertentu//",
+        "date": "Tempat menyimpan topik tersebut terjadi ditanggal berapa *yy-mm-dd, ambil tanggal yang terdapat di akhir komentar",
+        "breakdown": [
+            "rincian topik yang paling banyak dibicarakan pertama",
+            "rincian topik yang paling banyak dibicarakan kedua",
+            "rincian topik yang paling banyak dibicarakan ketiga",
+            "rincian topik yang paling banyak dibicarakan keempat",
+            "dll. yang paling banyak sesuai kapasitas topik"
+        ]
+    },
+    { 
+        "topic": "// Topik komentar yang paling sering dibahas pada tanggal tertentu (dll. sesuai tanggal berapa yang ada)//",
+        "date": "Tempat menyimpan topik tersebut terjadi ditanggal berapa *yy-mm-dd, ambil tanggal yang terdapat di akhir komentar",
+        "breakdown": [
+            "rincian topik yang paling banyak dibicarakan pertama",
+            "rincian topik yang paling banyak dibicarakan kedua",
+            "rincian topik yang paling banyak dibicarakan ketiga",
+            "rincian topik yang paling banyak dibicarakan keempat",
+            "dll. yang paling banyak sesuai kapasitas topik"
+        ]
+    }
+
+    
+]
+
+
